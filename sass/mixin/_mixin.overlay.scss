@@ -1,0 +1,15 @@
+@mixin overlay() {
+
+    
+
+    z-index:-1; 
+    background:rgba(255,255,255,.77); 
+    position:fixed; 
+    height:100%; 
+    width:100%; 
+    opacity:0;
+ 
+
+ 
+}
+

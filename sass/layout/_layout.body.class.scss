@@ -1,0 +1,268 @@
+@import '../layout/layout.config';
+@import '../mixin/mixin.mediaquery';
+@import '../mixin/mixin.flexbox';
+@import '../mixin/mixin.transform';
+
+ 
+body.light {
+    
+ 
+    
+[data-overlay]:before {background: $color-primary;}
+[data-overlay="9"]:before {opacity: 0.9;}
+[data-overlay="8"]:before {opacity: 0.8;}
+[data-overlay="7"]:before {opacity: 0.7;}
+[data-overlay="6"]:before {opacity: 0.6;}
+    
+header {
+        position: fixed;
+        top: 0;
+        z-index: 8;
+        transition: all .5s ease;
+        transition: all .25s ease-out 0s;
+        box-shadow: none;
+        background: black;
+        //height: 72px;
+        
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        
+        @include tablet {
+            display: none;
+        }
+    
+        ul {
+            li { 
+                a {
+                    color: white;
+                    border-radius: $radius;
+                    border: 2px solid white;
+                    padding: .5rem;
+                    font-size: $size-ssm;
+                    transition: 0.35s;
+                    &:hover {
+                        background: white;
+                        color: black;
+                    }
+                }
+            }
+            
+            &.user {
+                li {
+                    a {
+                        color: $color-primary;
+                        border: 2px solid $color-primary;
+                        &:hover {
+                            background: $color-primary;
+                            color: white;
+                        }
+                       &.apps {
+                            border: none;
+                            i {
+                                filter: grayscale(1);
+                                opacity: .6;
+                            }
+                           &:hover {
+                               border: none;
+                               box-shadow: $shadow-sm;
+
+                               background: none;
+                               i {
+                                   opacity: 1;
+                                   filter: grayscale(0);
+                               }
+                           }
+                        }                         
+                    }
+                }
+            }
+        }
+    }             
+ }
+    
+    .logo {
+      background: url(../images/logo-w.svg);  
+    }
+
+    
+    
+    section.intro {
+        
+        h1, h2 {
+            color: white;
+        }
+        
+        
+        .btn {
+            background: none;
+            border: 2px solid white;
+        }
+        
+    }
+    
+ 
+
+    &.fix {
+        header {
+            background: rgba(255,255,255,0.97);
+            box-shadow: 0 1px 8px rgba(0, 0, 0, .1), 0 16px 48px rgba(0, 0, 0, .1), 0 24px 60px rgba(0, 0, 0, .1);
+        }
+        
+        .logo {
+            background: url(../images/logo.svg); 
+        }
+        
+        ul.menu {
+            li {
+                a {
+                    color: $color-primary;
+                    
+                    img {
+                        filter: brightness(0) invert(0) grayscale(0);
+                        opacity: 0.3;
+                    }
+                }   
+            }
+        }
+        
+        footer {
+            .logo {
+              background: url(../images/logo-compreseguros-w.svg) no-repeat;
+            }
+        } 
+        
+        &.show {
+            ul.menu {
+                li {
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+body.dark {
+ 
+    
+    
+[data-overlay]:before {background: $color-third;}
+[data-overlay="9"]:before {opacity: 0.9;}
+[data-overlay="8"]:before {opacity: 0.8;}
+[data-overlay="7"]:before {opacity: 0.7;}
+[data-overlay="6"]:before {opacity: 0.6;}
+        
+    
+    
+    header {
+        background: $color-primary;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        
+      
+    
+        ul {
+            
+        @include tablet {
+            display: none;
+        }              
+            
+            li { 
+                a {
+                    color: white;
+                    border-radius: $radius;
+                    border: 2px solid white;
+                    padding: .5rem;
+                    font-size: $size-ssm;
+                    transition: 0.35s;
+                    &:hover {
+                        background: white;
+                        color: black;
+                    }
+                }
+            }
+            
+            &.user {
+                li {
+                    a {
+                        color: $color-primary;
+                        border: 2px solid white;
+                        background: white;
+                        
+                        &:hover {
+                            background: $color-primary;
+                            color: white;
+                        }
+                       &.apps {
+                            border: none;
+                            i {
+                                filter: grayscale(0);
+                                opacity: 1;
+                            }
+                           &:hover {
+                               border: none;
+                               box-shadow: $shadow-sm;
+
+                               background: black;
+                               i {
+                                   opacity: 1;
+                                   filter: grayscale(0);
+                               }
+                           }
+                        }                         
+                    }
+                }
+            }
+        }
+    }          
+      
+    }
+ 
+    .logo {
+        filter: brightness(0) invert(1);
+    }
+
+   
+    
+    footer .logo {
+         filter: brightness(0) invert(0);
+    }
+
+    section.intro {
+  
+        //padding-top: 76px;
+        
+        @include tablet {
+           padding-top: 132px;
+        }          
+        
+        
+        .comp-wrap {
+            filter: grayscale(0);
+        }
+        
+        
+        h1 { 
+            color: white;
+        }
+        
+        p {
+            color: white;
+        }
+        
+ 
+ 
+        
+        h2 {
+            color: white;
+            opacity: 0.7;
+ 
+        }
+    }
+}

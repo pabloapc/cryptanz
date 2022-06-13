@@ -1,0 +1,169 @@
+@import 'mixin/mixin.mediaquery';
+@import 'mixin/mixin.transform';
+@import 'layout/layout.config';
+
+//@import 'layot/layout.menu';
+
+header {
+    width: 100%;
+	//background:rgba(223, 164, 0, .89);
+    position: relative;
+    padding: 0 $margin-m ;
+    z-index: 1; 
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    //transition: 0.35s;  
+    &.center {
+        justify-content: center;
+    }
+    
+    &.justify-content-around {
+        justify-content: space-around;
+    }    
+    
+    
+    &.fixed {
+        position: fixed;
+        top: 0;
+        backdrop-filter: blur(10px);
+        background-color: hsla(0,0%,100%,.7);
+        z-index: 9;
+        //box-shadow: 0 2px 20px 2px rgba(60,64,67 , 0.15);
+        box-shadow: $shadow-sm;
+        
+        .logo {
+            background: url(../images/logo.svg);
+            min-width: 136px;
+            max-width: 136px;
+            min-height: 48px;
+            max-height: 48px;
+
+            &.white {
+              background: url(../images/logo-w.svg);  
+            }
+
+            @include mobile {
+                 @include scale(0.77);
+                //margin-left: -20px;
+            } 
+        }
+    }   
+    
+    
+    &.shadow {
+    //@include box-shadow(  1px ,  1px ,  1px ,  0px ,  rgba(0, 0, 0, 0.21)); 
+    //box-shadow: 0 1px 2px 0 rgba(60,64,67 , 0.3), 0 2px 6px 2px rgba(60,64,67 , 0.15);
+    box-shadow: $shadow-sm;    
+    }
+    
+    
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        
+        @include tablet {
+            display: none;
+        }
+        
+        ul {
+            display: flex;
+            align-items: center;
+            margin: 0 $margin;
+            padding: 0;
+
+            li { 
+                margin: 0 6px;
+                a {
+                    color: $color-primary;
+                    border-radius: $radius;
+                    border: 2px solid $color-primary;
+                    padding: .5rem;
+                    font-size: $size-ssm;
+                    transition: 0.35s;
+                    &:hover {
+                        background: $color-primary;
+                        color: white;
+                    }
+
+                }
+            }
+            
+            &.user {
+                li {
+                    a {
+                        color: $color-secondary;
+                        border: 2px solid $color-secondary;
+                        &:hover {
+                            background: $color-secondary;
+                            color: white;
+                        }
+                        
+                       &.apps {
+                            border: 2px solid white;
+                            display: flex;
+                            justify-content: space-around;
+                            padding: 0.3rem 0.5rem;
+                            i {
+                                min-width: 28px;
+                                min-height: 28px;
+                                filter: grayscale(1);
+                                opacity: .6;
+                                &.ios {
+                                  background: url(../images/app-store.svg) no-repeat;   
+                                }
+                                &.android {
+                                  background: url(../images/play-store.svg) no-repeat;   
+                                }                                
+                            }
+                           &:hover {
+                               border: 2px solid white;
+                               box-shadow: $shadow-sm;
+
+                               background: white;
+                               i {
+                                   opacity: 1;
+                                   filter: grayscale(0);
+                               }
+                           }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.logo {
+    background: url(../images/logo.svg);
+    min-width: 136px;
+    max-width: 136px;
+    min-height: 48px;
+    max-height: 48px;
+    
+    &.white {
+      background: url(../images/logo-w.svg);  
+    }
+    
+    &.var {
+        background: url(../images/logo-var.svg);
+        min-width: 136px;
+        max-width: 136px;
+        min-height: 48px;
+        max-height: 48px;
+ 
+        &.white {
+          background: url(../images/logo-var-w.svg);  
+        }
+    }    
+    
+    @include mobile {
+         @include scale(0.77);
+        //margin-left: -20px;
+    } 
+}
+

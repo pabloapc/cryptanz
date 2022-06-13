@@ -1,0 +1,29 @@
+/* overlay */    
+.overlay {
+    z-index: -1;
+    backdrop-filter: blur(3px);
+    background-color: hsla(0,0%,100%,.77);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: none;
+    &.show {
+        display: block;
+        opacity: 1;
+        z-index: 10; 
+    }  
+}
+
+
+body.dark {
+    .overlay {
+    background-color: hsla(0,0%,0%,.87);
+    }
+}
+
+
+body.light {
+    .overlay {
+    background-color: hsla(125, 50%, 25%, 0.87);
+    }
+}

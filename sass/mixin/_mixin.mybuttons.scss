@@ -1,0 +1,14 @@
+@import 'mixin/mixin.btn';
+@import 'mixin/mixin.border.radius';
+@import 'mixin/mixin.opacity';
+@import 'layout/layout.config';
+
+@mixin mybutton {
+  @include button(167px, 48px, $color-primary, #FFF, 16px, $font-r);
+  @include border-radius($radius);
+    position: relative;
+    &:hover {
+    @include opacity(0.9);
+  }
+ 
+}

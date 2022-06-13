@@ -1,0 +1,47 @@
+.bg-cover {
+    @include background-size(cover); 
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+ 
+.inverted {
+	filter: invert(50%);
+}
+
+
+.grayscale {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+ 
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+ 
+
+.icon-rounded {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 4rem;
+}
+
+.icon-rounded svg, .icon-rounded i {
+    vertical-align: middle;
+}
+
+
+.bg-secondary-light {
+    background: #fce8f1;
+}
+
+.bg-primary-light {
+    background-color: #eaedfe;
+}

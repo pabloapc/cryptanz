@@ -1,0 +1,99 @@
+@import '../mixin/mixin.grid';
+@import '../mixin/mixin.mediaquery';
+@import '../mixin/mixin.box.shadow';
+@import '../mixin/mixin.flexbox';
+
+
+html, body {
+	width: 100%;
+	height: 100%;
+	color: $color-text;
+	text-align: center;
+	font-family: helvetica, arial;
+    
+}
+
+.wrap-main {
+    @include flexbox;
+    @include flex-direction(column);
+    min-height: 100vh;
+}
+
+  
+
+.main  {
+    @include flex-grow(1); 
+    padding: 0px;
+    @include desktop {
+      //  padding: 10px;
+    }
+}
+ 
+
+.flex, .row {
+    @include flexbox();
+    @include justify-content(space-around);
+}
+
+.column {
+    @include flex-direction(row) ;
+    @include tablet {
+       @include flex-direction(column) ; 
+       //flex-wrap: wrap;
+    }
+}
+
+.flex.column {
+    @include mobile {
+        flex-direction: column;
+    }
+}
+
+.row {
+  //@include flex-direction(row) ;  
+}
+
+.flexwrap {
+    @include flex-wrap(wrap)
+}
+
+.wrap {
+	width:1200px;
+	margin:0 auto;
+    @include desktop {
+        width:100%;
+    }
+    @include laptop {
+        width:99%;
+    }
+    @include tablet {
+        width:98%;
+    }
+    @include mobile {
+        width:100%;
+    }
+   
+}
+.flex.align {align-items: center;}
+.flex.left { align-items: flex-start;}
+.flex.right { align-items: flex-end}
+
+.flew-wrap {
+ 
+    flex-wrap: wrap;
+}
+
+.mb, .mt {
+  margin: $margin * 2 0; 
+    @include tablet {
+       margin: $margin 0;  
+    }
+}
+
+.margin { 
+    margin: $margin;
+}
+
+.line-top { 
+    border-top: 1px solid $color-text2
+}

@@ -1,0 +1,170 @@
+.modal {
+    position: fixed;
+    top: -100%;
+    left: 0%;
+    margin-left:0;
+    width: 100%;
+    padding: 0;
+    z-index: 1002;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .1); 
+    box-shadow: 0 1px 2px 0 rgba(60,64,67 , 0.3), 0 2px 6px 2px rgba(60,64,67 , 0.15);
+    @include border-radius ($radius);
+    overflow: initial;
+    @include tablet {
+      width: 96%;
+      margin-left: 0;
+      left: 2%; 
+    } 
+    
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 0; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include mobile {
+            font-size: 20px;
+        }
+        i { 
+ 
+            filter: grayscale(1);
+        }
+    }
+    
+    h3 { 
+        font-weight: 100;
+        color: $color-primary;
+        padding: 6px;
+        margin-top: $margin-m;
+        text-align: center;
+    }
+    
+    .close {
+        background-image: url(../images/icos/ico-close-w.svg);
+        background-color: #bebebe;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        @include border-radius ($radius);
+        cursor: pointer;
+        transform: scale(.87);
+        box-shadow: $shadow-sm; 
+        z-index: 1;
+        width: 28px;
+        height: 28px;
+        &:hover {
+ 
+            transform: scale(1);
+        }  
+        
+        @include mobile {
+            right: 0px;
+            top: 0px; 
+        }
+    }
+    
+    &.open {
+        //display: block; 
+    }
+    
+    &.login {
+        background: white;
+        height: 480px; 
+        opacity: 0;
+        padding: $margin;
+        left: 50%;
+        top: auto;
+        bottom: -500px;
+        margin-left: -260px;
+        width:520px;
+            @include tablet {
+                width: 100%;
+                height: auto; 
+                margin-left: 0;
+                left: 0;
+            }
+        
+        &.open {
+            top: $margin;
+            opacity: 1;
+        }
+    }
+    
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-weight: 600;
+        box-shadow:$shadow-m; 
+        background:white;
+        color: #777;
+        padding: 0 $margin;
+        margin: 0 $margin;
+        border-color: white;
+        font-size: $size-ssm;
+        transition: .15s;
+        
+        @include mobile {
+            margin: 8px auto;
+        }
+        &:hover {
+            background: #fafafa;
+            color: $color-secondary;
+            border-color: $color-secondary;
+            i {
+               filter: grayscale(0); 
+            }
+        }
+        i {
+            margin-left: -10px;
+            transform: scale(0.75);
+            filter: grayscale(1);
+        }
+        
+        
+        &.suscription {
+            font-size: $size-sm;
+            background: $color-primary;
+            color: white;
+            i {
+                background: url(../images/icos/ico-ok-01-w.svg) no-repeat;
+            }
+            
+            &:hover {
+                border-color: $color-primary;
+            }
+            
+        }
+        
+        &.whatsapp {
+            i {
+              background: url(../images/icos/ico-whatsapp.svg) no-repeat;    
+            }  
+        }
+        
+        &.phone {
+            i {
+               background: url(../images/icos/ico-phone.svg) no-repeat; 
+            }
+        }
+        &.mail {
+            i {
+                 background: url(../images/icos/ico-mail.svg) no-repeat; 
+            }
+        }
+        
+        
+        
+        @include tablet {
+          margin: 18px auto;  
+        }
+        
+        @include mobile {
+            width: 100%;
+            margin: 6px auto;  
+    
+        }
+    }
+}

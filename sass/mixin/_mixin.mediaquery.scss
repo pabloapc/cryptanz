@@ -1,0 +1,44 @@
+/* mediaquery */
+@mixin desktop {
+  @media only screen and (max-width: 1280px) {
+    @content;
+            ul li {
+            font-size: 15px;
+            margin-right: 10px;
+      }
+  }
+}
+
+@mixin minidesktop {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media only screen and (max-width: 960px) {
+    @content;
+
+  }
+}
+@mixin tablet {
+  @media only screen and (max-width: 768px) {
+    @content;
+ 
+  }
+}
+@mixin mobile {
+  @media only screen and (max-width: 480px) {
+    @content;
+      ul li {
+          font-size: 13px;
+          //margin-right: 6px;
+      }
+  }
+}
+
+@mixin minimobile {
+  @media only screen and (max-width: 320px) {
+    @content;
+  }
+}

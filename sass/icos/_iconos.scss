@@ -1,0 +1,50 @@
+@import '../mixin/mixin.mediaquery';
+//
+$sizeico: 38px;
+$sizeico-m: 38px;
+ 
+i { 
+    min-width: $sizeico; 
+    max-width: $sizeico; 
+    min-height: $sizeico; 
+    max-height: $sizeico; 
+    //transform: scale(0.5);
+    //background: $sprite;
+    
+    @include mobile {
+        min-width: $sizeico-m; 
+        max-width: $sizeico-m; 
+        min-height: $sizeico-m; 
+        max-height: $sizeico-m;   
+    }
+}
+
+i.ok {
+    background: url(../images/icos/ico-ok-02.svg) no-repeat;  
+}
+i.ko {
+    background: url(../images/icos/ico-close.svg) no-repeat;
+}
+i.more {
+     
+}
+i.phone {
+    background: url(../images/icos/white/ico-phone.svg) no-repeat;
+}
+i.more {
+    background: url(../images/icos/ico-more.svg) no-repeat;
+}
+i.clock { 
+    background: url(../images/icos/white/ico-clock.svg) no-repeat;
+}
+i.tarjeta { 
+    background: url(../images/icos/white/ico-credit-01.svg) no-repeat;
+    margin-right: 10px;
+}
+i.cbu { 
+    background: url(../images/icos/white/ico-bank-02.svg) no-repeat;
+    margin-right: 10px;
+}
+i.whatsapp { 
+    background: url(../images/icos/white/ico-whatsapp.svg) no-repeat;
+}

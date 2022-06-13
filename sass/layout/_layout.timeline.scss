@@ -1,0 +1,361 @@
+@import '../layout/layout.config';
+
+$backtime: $color-primary;
+$sizetime: 12px;
+$sizetime-i: 18px;
+$sizetime-m: 18px;
+
+.timeline { 
+    position: relative;
+    width: 100%;
+    height: 4px;
+    z-index: 0; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mobile {
+        height: $sizetime-m;
+        margin: 0;
+    }
+    
+    &:after {    
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: #cbcbcb;
+        top: 50%;
+        margin-top: -2px;
+        z-index: 0;
+        @include border-radius(3px);
+    }   
+    
+    .step {
+        content: "";
+        position: absolute;
+        height: 3px;
+        background:$backtime;
+        top: 50%;
+        margin-top: -2px;
+        z-index: 1;
+        transition: .5s;
+        @include border-radius(3px);
+    }
+    
+    .circle {
+        width: $sizetime;
+        height: $sizetime;
+        -webkit-border-radius: $sizetime;
+        -moz-border-radius: $sizetime;
+        border-radius: $sizetime;
+        background: $color-primary;
+        text-align: center;
+        color: #fff;
+        line-height: $sizetime;
+        z-index: 2; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        @include mobile {
+            width: $sizetime-m;
+            height: $sizetime-m;  
+            -webkit-border-radius: $sizetime-m;
+            -moz-border-radius: $sizetime-m;
+            border-radius: $sizetime-m;
+            line-height: $sizetime-m;
+        }
+        
+        i  {
+                min-width: $sizetime-i;
+                max-width: $sizetime-i;
+                min-height: $sizetime-i;
+                max-height: $sizetime-i;
+                //background: $sprite  -345px -104px;
+                background: url(../img/icos/white/ico-ok-02.svg) no-repeat;
+                @include mobile {
+                  //background: $sprite   -349px -110px;
+                    transform: scale(.6);
+                }
+                display: none;
+                @include mobile {
+                    min-width: $sizetime-m;
+                    max-width: $sizetime-m;
+                    min-height: $sizetime-m;
+                    max-height: $sizetime-m;
+                }
+            }
+        
+    }
+    
+    //en circle
+    
+    &.uno {
+        .circle.uno {background:$backtime;}
+        .step {
+            width:0%;
+        } 
+    }
+    
+    &.dos {
+        .circle.uno {background:$backtime;}
+        .circle.uno span {display:none;}
+        .circle.uno i {display: block;}
+        
+        .circle.dos {background:$backtime;}
+
+        .step {
+            width:14.285%;
+        }
+    }
+    
+    &.tres {
+        .circle.uno {background:$backtime;}
+        .circle.uno span {display:none;}
+        .circle.uno i {  display: block; }
+        
+        .circle.dos {background:$backtime;}
+        .circle.dos span {display:none;}
+        .circle.dos i {  display: block; }
+
+        .circle.tres {background:$backtime;}
+
+        .step {
+             width:14.285% * 2;
+        }
+    } 
+    
+    &.cuatro {
+        .circle.uno span {display:none;}
+        .circle.uno {background:$backtime;}
+        .circle.uno i {  display: block; }
+        
+        .circle.dos {background:$backtime;}
+        .circle.dos span {display:none;}
+        .circle.dos i {  display: block; }    
+        
+        .circle.tres {background:$backtime;}
+        .circle.tres span { display: none;}
+        .circle.tres i {  display: block; }
+
+        .circle.cuatro {background:$backtime;}
+        .step {
+            width:14.285% * 3;
+        }
+    }  
+    
+    &.cinco {
+        .circle.uno span {display:none;}
+        .circle.uno {background:$backtime;}
+        .circle.uno i {  display: block; }
+       
+        .circle.dos {background:$backtime;}
+        .circle.dos span {display:none;} 
+        .circle.dos i {  display: block; }
+        
+        .circle.tres {background:$backtime;}
+        .circle.tres span { display: none;}
+        .circle.tres i {  display: block; }
+
+        .circle.cuatro {background:$backtime;}
+        .circle.cuatro span { display: none;}
+        .circle.cuatro i {  display: block; }
+        
+        .circle.cinco {background:$backtime;}
+        
+        .step {
+            width:14.285% * 4;
+        }
+    }
+    
+    &.seis {
+        .circle.uno span {display:none;}
+        .circle.uno {background:$backtime;}
+        .circle.uno i {  display: block; }
+       
+        .circle.dos {background:$backtime;}
+        .circle.dos span {display:none;} 
+        .circle.dos i {  display: block; }
+        
+        .circle.tres {background:$backtime;}
+        .circle.tres span { display: none;}
+        .circle.tres i {  display: block; }
+
+        .circle.cuatro {background:$backtime;}
+        .circle.cuatro span { display: none;}
+        .circle.cuatro i {  display: block; }
+        
+        .circle.cinco {background:$backtime;}
+        .circle.cinco span { display: none;}
+        .circle.cinco i {  display: block; }    
+        
+        .circle.seis {background:$backtime;}
+        
+        .step {
+            width:14.285% * 5;
+        }
+    }  
+    
+    &.siete {
+        .circle.uno span {display:none;}
+        .circle.uno {background:$backtime;}
+        .circle.uno i {  display: block; }
+       
+        .circle.dos {background:$backtime;}
+        .circle.dos span {display:none;} 
+        .circle.dos i {  display: block; }
+        
+        .circle.tres {background:$backtime;}
+        .circle.tres span { display: none;}
+        .circle.tres i {  display: block; }
+
+        .circle.cuatro {background:$backtime;}
+        .circle.cuatro span { display: none;}
+        .circle.cuatro i {  display: block; }
+        
+        .circle.cinco {background:$backtime;}
+        .circle.cinco span { display: none;}
+        .circle.cinco i {  display: block; } 
+        
+        .circle.seis {background:$backtime;}
+        .circle.seis span { display: none;}
+        .circle.seis i {  display: block; }       
+        
+        
+        .circle.siete {background:$backtime;}
+        
+        .step {
+            width:14.285% * 6;
+        }
+    }   
+
+    &.final {
+        
+        .circle.uno {background:$backtime;}
+        .circle.dos {background:$backtime;}
+        .circle.tres {background:$backtime;}
+        .circle.cuatro {background:$backtime;}
+        .circle.cinco {background:$backtime;}        
+        .circle.seis {background:$backtime;} 
+        .circle.siete {background:$backtime;}     
+        
+        
+        .circle.uno span { display: none;}
+        .circle.dos span { display: none;}
+        .circle.tres span { display: none;}
+        .circle.cuatro span { display: none;}
+        .circle.cinco span { display: none;}
+        .circle.seis span { display: none;}
+        .circle.siete span { display: none;}
+        
+        
+        .circle.uno i { display: block;}
+        .circle.dos i { display: block;}
+        .circle.tres i { display: block;}
+        .circle.cuatro i { display: block;}
+        .circle.cinco i { display: block;}
+        .circle.seis i { display: block;} 
+        .circle.siete i { display: block;}
+        
+        
+        
+        .step {
+            width:100%;
+            &:before {
+            opacity: 1; 
+            right: 0;    
+                }
+            }   
+        }  
+    
+    &._50 {
+        &.dos .step {
+            width: 50%;
+        }  
+    }
+    
+    &._33 {
+        &.dos .step {
+            width: 33.333336%;
+        }  
+        &.tres .step {
+            width: 66.333336%;
+        }          
+    }
+    &._25 {
+        &.dos .step {
+            width: 25%;
+        }  
+        &.tres .step {
+            width: 50%;
+        } 
+        &.cuatro .step {
+            width: 75%;
+        }         
+    }
+    &._20 {
+        &.dos .step {
+            width: 20%;
+        }  
+        &.tres .step {
+            width: 40%;
+        } 
+        &.cuatro .step {
+            width: 60%;
+        } 
+        &.cinco .step {
+            width: 80%;
+        }        
+    }     
+
+    &.progress {
+        background: none;
+        @include mobile {
+            margin-top: 24px;
+        }
+        .step {
+            width: 0%;
+            &:before {
+                width: $sizetime-m;
+                height: $sizetime-m;  
+                @include border-radius($sizetime-m);
+                background: $color-primary;
+                z-index: 2;
+                content: "";
+                position: absolute;
+                right: 0;
+                top: -6px;
+            }
+        }    
+        &.final {
+            .step {
+                &:before { 
+                    right: 0;
+                } 
+            } 
+        }  
+    }
+    &.home {
+        margin-top: 48px;
+        justify-content: space-around;
+        .circle {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+// otro timeline
+.timelabel {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:0; 
+    span {
+        padding: 4px 6px;
+        font-size: 13px;
+        color: $color-third;
+    }
+    @include mobile {
+        display: none;
+    }
+}

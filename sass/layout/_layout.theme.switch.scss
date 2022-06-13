@@ -1,0 +1,91 @@
+*:focus {
+    //outline: none;
+    @include border-radius($radius);
+}
+
+:root {
+  --text: #FFF;
+  --highlight: #eee;
+}
+
+.theme-switch {
+    position: absolute;
+    margin: 0 $margin * 2;
+    right: 0;
+    top: 20px;
+  --background: #FFF;
+  --text: #000;
+  color: var(--text);
+  width: 40px;
+  height: 14px;
+  background: var(--highlight);
+  border-radius: 40px;
+
+    &:after {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: url(../images/icos/ico-sun.svg) no-repeat;
+        filter: grayscale(1);
+        left: -24px;
+        top: -3px;
+        z-index: 1;
+        opacity: 0;
+        transition: 0.35s;
+    }
+    
+    &:before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: url(../images/icos/ico-moon.svg) no-repeat;
+        filter: grayscale(1) invert(1);
+        right: -24px;
+        top: -3px;
+        z-index: 1;
+        transition: 0.35s;
+    }
+    
+    .switch {
+        background: white;
+        width: 20px;
+        height: 20px;
+        background: var(--background);
+        border-radius: 100%;
+        position: absolute;
+        top: -3px;
+        left: 0px;
+        box-shadow: 0 1px 4px 0 rgba(35, 35, 35,  .16);
+        transition: 0.15s all ease;
+          z-index: 2;
+      }
+}
+
+.light-theme {
+  --background: #f2f2f2;
+  //--text: #fff;
+  background: var(--background);
+
+  .theme-switch {
+    background: #56616a;
+      &:after {
+          opacity: 1;
+          
+          filter: grayscale(1)invert(1);
+      }
+      &:before {
+          opacity: 0;
+      }
+
+    .switch {
+      transform: translateX(22px);
+        background: #78828b;
+        box-shadow: 0 1px 4px 0 rgba(35, 35, 35,  .36);
+    }
+  }
+  a {
+    //color: var(--text); 
+  }
+}
